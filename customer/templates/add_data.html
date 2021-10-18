@@ -1,0 +1,17 @@
+{% extends 'admin/base_site.html' %}
+{% load i18n admin_urls %}
+{% block content %}
+
+<div style="padding-left:45vh;">
+ <form  action="calculate" method="post" enctype="multipart/form-data">
+ {% csrf_token %}
+     <input id="input_x" value="" name="input_x" type="text">
+          <input id="input_i" value="" name="input_i" type="text">
+    <input type="submit" value="do it">
+ </form>
+    {% if res != None %}
+
+    <h1> result {{ res }} </h1>
+    {% endif %}
+</div>
+{% endblock content %}
